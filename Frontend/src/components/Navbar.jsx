@@ -1,25 +1,24 @@
 import React,{useState} from 'react'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-        <nav className="bg-blue-700 shadow-lg fixed top-0 left-0 w-full z-10">
+        <nav className="bg-gray-950 shadow-lg fixed top-0 left-0 w-full z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Title */}
           <div className="text-white font-bold text-xl">
-            Word<span className="text-yellow-300">To</span>Pdf
+            Quick<span className="text-yellow-300">PDF</span>er
           </div>
 
           {/* Menu for larger screens */}
           <div className="hidden md:flex space-x-6">
-            <a href="#home" className="text-white hover:text-yellow-300">
-              Home
+            <a href="/" className="text-white hover:text-yellow-300">
+            <Link to='/'>Home</Link>
             </a>
-            <a href="#features" className="text-white hover:text-yellow-300">
-              Features
-            </a>
+            
             
           </div>
 
@@ -52,29 +51,13 @@ function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-blue-600">
           <a
-            href="#home"
+            href="/"
             className="block px-4 py-2 text-white hover:bg-blue-700"
           >
-            Home
+            <Link to='/'>Home</Link>
           </a>
-          <a
-            href="#features"
-            className="block px-4 py-2 text-white hover:bg-blue-700"
-          >
-            Features
-          </a>
-          <a
-            href="#pricing"
-            className="block px-4 py-2 text-white hover:bg-blue-700"
-          >
-            Pricing
-          </a>
-          <a
-            href="#contact"
-            className="block px-4 py-2 text-white hover:bg-blue-700"
-          >
-            Contact
-          </a>
+          
+          
         </div>
       )}
     </nav>
