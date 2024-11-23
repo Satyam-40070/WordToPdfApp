@@ -25,7 +25,7 @@ function Home() {
         formData.append("file", FileName);
         setLoading(true);
         try {
-            const response= await axios.post("http://localhost:3000/convert", formData, {
+            const response= await axios.post(`https://word-to-pdf-5qh8ed801-satyam-40070s-projects.vercel.app/convert`, formData, {
                 responseType: "blob",
             });
             console.log(response.data);
